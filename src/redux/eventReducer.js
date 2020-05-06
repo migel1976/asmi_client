@@ -30,6 +30,17 @@ const setEvents=(events)=>({
                   type:SET_EVENTS,
                   events});
 
+export const deleteEventItem=(body)=>{
+        return(dispatch)=>{
+              // debugger;
+              EventApi.deleteEventItem(body)
+                .then(res=>{
+                  console.log('deleteEventItem->res',res);
+                    EventApi.getEvents()
+                      .then(res=>dispatch(setEvents(res)))
+                })
+        }
+};
 
 export const editEventItem=(body)=>{
         return (dispatch)=>{

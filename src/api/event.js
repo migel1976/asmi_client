@@ -21,9 +21,16 @@ const EventApi={
   }
   ,
   editEventItem(body){
-        return instance.put('edit',body)
-          .them((res)=>{
+        return instance.put('edit',{data:{id:body.id}})
+          .then((res)=>{
             console.log('result in EventApi.editEventItem',res.data);
+          })
+  },
+  deleteEventItem(body){
+        debugger;
+        return instance.delete('delete',{data:{id:body.id}})
+          .then((res)=>{
+            console.log('result in EventApi.deleteEventItem',res.data);
           })
   }
 }

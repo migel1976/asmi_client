@@ -5,10 +5,18 @@ import AddEvent from './add-event';
 class EventLog extends React.Component{ 
 
       eventClick=(e)=>{
-        console.log(e.currentTarget.dataset.id);
+        console.log(e);
+        console.log(e.target);
+        // console.log(e.currentTarget.dataset.id);
         console.log(e.currentTarget.dataset.name);
         let text=e.currentTarget.dataset.name || '';
         this.props.textareaAddAC(text);
+      };
+    
+      deleteItem=(e)=>{
+        const id=e.currentTarget.dataset.id;
+        console.log(id);
+        this.props.deleteEventItem({id:id});
       };
 
       render(){
@@ -20,7 +28,11 @@ class EventLog extends React.Component{
                              data-name={event.name}
                              onClick={this.eventClick}
                               >{event.name}</li>
-                             <button>Удалить</button>
+                             <button data-id={event._id}
+                                    onClick={this.deleteItem} 
+                                                >Удалить</button>
+                             <button data-name={event.name} 
+                                    onClick={this.eventClick}>Редактировать</button>
                           </div>
           ));
             return(
