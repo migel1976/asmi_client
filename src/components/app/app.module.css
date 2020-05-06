@@ -1,0 +1,10 @@
+.app{
+  display:grid;
+  grid-template-columns:150px 100%;
+  grid-template-areas:
+  "hd hd"
+  "nv content";
+}
+.app_content{
+  grid-area:content;
+}

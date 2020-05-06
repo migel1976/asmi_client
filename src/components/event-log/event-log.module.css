@@ -1,0 +1,10 @@
+.event_log{
+  font-size:18px;
+  color:white;
+  background-color:white;
+}
+.text{
+  font-size:22px;
+  color:red;
+  cursor:pointer;
+}
