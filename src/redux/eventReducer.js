@@ -30,6 +30,19 @@ const setEvents=(events)=>({
                   type:SET_EVENTS,
                   events});
 
+
+export const editEventItem=(body)=>{
+        return (dispatch)=>{
+              EventApi.editEventItem(body)
+                .then(res=>{
+                  console.log('editEventItem->res',res);
+                    EventApi.getEvents()
+                      .then(res=>dispatch(setEvents(res)))
+                })
+        }
+};
+
+
 export const setEventItem=(body)=>{
         return (dispatch)=>{
               // debugger;

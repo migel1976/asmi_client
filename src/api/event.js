@@ -16,7 +16,14 @@ const EventApi={
   setEventItem(body){
         return instance.post('add',body)
           .then((res)=>{
-            console.log('result in EventAPI.setEvent',res.data);
+            console.log('result in EventAPI.setEventItem',res.data);
+          })
+  }
+  ,
+  editEventItem(body){
+        return instance.put('edit',body)
+          .them((res)=>{
+            console.log('result in EventApi.editEventItem',res.data);
           })
   }
 }
