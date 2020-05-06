@@ -7,6 +7,8 @@ class EventLog extends React.Component{
       eventClick=(e)=>{
         console.log(e.currentTarget.dataset.id);
         console.log(e.currentTarget.dataset.name);
+        let text=e.currentTarget.dataset.name || '';
+        this.props.textareaAddAC(text);
       };
 
       render(){
@@ -22,7 +24,11 @@ class EventLog extends React.Component{
             return(
           <div className={style.event_log}>
             <h1>Журнал событий</h1>
-              <AddEvent setEventItem={this.props.setEventItem} />
+              <AddEvent 
+                      setEventItem={this.props.setEventItem}
+                      textareaAdd={this.props.textareaAdd}
+                      textareaAddAC={this.props.textareaAddAC}
+                      />
               <ul>
                 {events} 
               </ul>

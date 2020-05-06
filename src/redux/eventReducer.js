@@ -1,19 +1,30 @@
 import EventApi from '../api/event';
 const initialState={
-       events:[]
+       events:[],
+       textareaAdd:'hi'
 }
 
 const SET_EVENTS='SET_EVENTS';
+const TEXTEAREA_ADD='TEXTEAREA_ADD';
 
 const eventReducer=(state=initialState,action)=>{
+      // debugger;
       switch(action.type){
         case SET_EVENTS:
             return {...state,events:[...action.events]}
+
+        case TEXTEAREA_ADD:
+            return{...state,textareaAdd:action.text}
+            // return{textareaAdd:action.text}
         
         default:
           return state;
       }
 };
+
+export const textareaAddAC=(text)=>({
+                  type:TEXTEAREA_ADD,
+                  text});
           
 const setEvents=(events)=>({
                   type:SET_EVENTS,
@@ -21,7 +32,7 @@ const setEvents=(events)=>({
 
 export const setEventItem=(body)=>{
         return (dispatch)=>{
-              debugger;
+              // debugger;
               EventApi.setEventItem(body)
                 .then(res=>{
                   console.log('setEventItem->res',res);
