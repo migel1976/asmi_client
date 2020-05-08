@@ -21,7 +21,9 @@ const EventApi={
   }
   ,
   editEventItem(body){
-        return instance.put('edit',{data:{id:body.id}})
+        // return instance.put('edit',{data:{id:body.id,name:body.name}})
+        debugger;
+        return instance.put('edit',body)
           .then((res)=>{
             console.log('result in EventApi.editEventItem',res.data);
           })

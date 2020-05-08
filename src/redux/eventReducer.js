@@ -44,6 +44,7 @@ export const deleteEventItem=(body)=>{
 
 export const editEventItem=(body)=>{
         return (dispatch)=>{
+              // debugger;
               EventApi.editEventItem(body)
                 .then(res=>{
                   console.log('editEventItem->res',res);
@@ -55,8 +56,8 @@ export const editEventItem=(body)=>{
 
 
 export const setEventItem=(body)=>{
+		// debugger;
         return (dispatch)=>{
-              // debugger;
               EventApi.setEventItem(body)
                 .then(res=>{
                   console.log('setEventItem->res',res);

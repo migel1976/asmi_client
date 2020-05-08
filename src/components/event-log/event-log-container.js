@@ -15,7 +15,6 @@ class EventLogContainer extends React.Component{
         // debugger;
         return(
                 <EventLog 
-                        setEventItem={this.props.setEventItem}
                         editEventItem={this.props.editEventItem}
                         deleteEventItem={this.props.deleteEventItem}
                         events={this.props.events}
@@ -32,7 +31,7 @@ const mapStateToProps=(state)=>({
 });
 
 const mapActionsToProps=({
-  getEventItems,setEventItem,editEventItem,deleteEventItem,textareaAddAC
+  getEventItems,editEventItem,deleteEventItem,textareaAddAC
 });
   
 export default connect(mapStateToProps, mapActionsToProps)(EventLogContainer);  
