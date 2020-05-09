@@ -1,2 +1,30 @@
 .add_event{
+  width:800px;
 }
+.text{
+}
+
+.text textarea{
+  width:100%;
+  color:blue;
+  font-size:14px;
+  height:100px;
+}
+
+.text input{
+  width:100%;
+  color:red;
+  height:30px;
+  font-size:14px; 
+
+}
+
+/* .text TextField{ */
+/* .text input{ */
+/*   width:100%; */
+/* } */
+
+/* .input{ */
+/*   width:100%; */
+/*   color:red; */
+/* } */
