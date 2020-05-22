@@ -4,7 +4,11 @@
   /* background-color:white; */
 }
 .text{
-  font-size:22px;
+  font-size:28px;
   color:red;
-  cursor:pointer;
+  /* cursor:pointer; */
+}
+.desc{
+  font-size:20px;
+  color:green;
 }

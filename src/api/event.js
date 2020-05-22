@@ -13,6 +13,17 @@ const EventApi={
           })
           // .catch(err=>res.send('произошла обшибка'))
       },
+	getEvent(id){
+		// return instance.get('id',body)
+		// axios.get('list/?find='+symbol)
+		// debugger;
+		const myid=id.id;
+		return instance.get('?id='+myid)
+		   .then((res)=>{
+				console.log('result is EventApi.getEvent',res.data);
+				return res.data;
+		   })
+	},
   setEventItem(body){
         return instance.post('add',body)
           .then((res)=>{

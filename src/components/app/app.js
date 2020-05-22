@@ -6,6 +6,7 @@ import Header from '../header/header';
 import Main from '../main/main';
 import EventLogContainer from '../event-log/event-log-container';
 import AddEventContainer from '../event-log/add-event/add-event-container';
+import EditEventContainer from '../event-log/edit-event/edit-event-container';
 import {useHistory} from "react-router-dom";
 
 const App=()=>{
@@ -22,6 +23,8 @@ const App=()=>{
               <Route exact path='/' render={()=><Main />} />
               <Route path='/eventlog' render={eventLogComponent} />
 			  <Route path='/add-event-page' render={()=><AddEventContainer history={history}/>} />
+			  <Route path='/edit-event-page/:id?' render={()=><EditEventContainer history={history}/>} />
+			  {/*<Route path='/edit-event-page/:id?' render={()=><EditEventContainer />} />*/}
 			</div>
           </div>
   )
